@@ -11,4 +11,7 @@ apt-cache policy docker-ce -y
 sudo apt install docker-ce -y
 #sudo systemctl status docker
 sudo chmod 777 /var/run/docker.sock
+docker --version
+docker images
+docker ps -a
 
