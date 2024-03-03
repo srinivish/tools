@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host Information</title>
+    <style>
+        body {
+            background-color: lightcoral; /* Change background color to light orange */
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Host Information</h1>
+        <ul id="hostInfo"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var hostInfoList = document.getElementById('hostInfo');
+
+            // Function to add host information to the list
+            function addHostInfoItem(name, value) {
+                var listItem = document.createElement('li');
+                listItem.textContent = name + ': ' + value;
+                hostInfoList.appendChild(listItem);
+            }
+
+            // Adding hostname
+            addHostInfoItem('Hostname', window.location.hostname);
+
+            // Adding user agent
+            addHostInfoItem('User Agent', navigator.userAgent);
+
+            // Adding platform
+            addHostInfoItem('Platform', navigator.platform);
+
+            // Adding language
+            addHostInfoItem('Language', navigator.language);
+
+            // Adding screen resolution
+            addHostInfoItem('Screen Resolution', screen.width + 'x' + screen.height);
+        });
+    </script>
+</body>
+</html>
